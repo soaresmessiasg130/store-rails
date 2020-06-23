@@ -1,0 +1,9 @@
+<%= form Produto.new do |form| %>
+  Code <input name="code" type="text"/> <br/>
+  Name <input name="name" type="text"/> <br/>
+  Description <textarea name="description" type="text-area"/></textarea> <br/>
+  Price <input name="price" type="number" step="0.01"/> <br/>
+  Quantity <input name="quantity" type="number"/> <br/>
+
+  <button type="submit">Criar</button>
+<% end %>

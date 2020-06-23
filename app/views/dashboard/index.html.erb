@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+
+<%= nav_bar brand:"Strore.fy", brand_lnk: root_url %>
+
+<div class="container">
+
+  <body>
+
+    <div class="alert alert-success">
+      <h4 class="alert-heading">Lista de Estoque</h4>
+    </div>
+
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Cod. Produto</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Preço</th>
+          <th>Estoque</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @produtos.each do |produto| %>
+        <tr>
+          <td><%= produto.code %></td>
+          <td><%= produto.name %></td>
+          <td><%= produto.description %></td>
+          <td><%= produto.price %></td>
+          <td><%= produto.quantity %></td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <div class="alert alert-success">
+      <h4 class="alert-heading">Produto Escassos</h4>
+    </div>
+
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Cod. Produto</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Preço</th>
+          <th>Estoque</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @produtos_escassos.each do |produto| %>
+        <tr>
+          <td><%= produto.code %></td>
+          <td><%= produto.name %></td>
+          <td><%= produto.description %></td>
+          <td><%= produto.price %></td>
+          <td><%= produto.quantity %></td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+  </body>
+</div>
+
+</html>
